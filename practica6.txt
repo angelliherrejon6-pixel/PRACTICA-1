@@ -1,0 +1,125 @@
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+public class Dibujo extends JPanel implements MouseListener, MouseMotionListener {
+	private JTextField tf;
+	private JComboBox<String> comboColores;
+	private JButton btnLimpiar;
+	private Color colorActual = Color.BLACK;
+
+	private int xPresionado, yPresionado;
+	private int xLiberado, yLiberado;
+	private int xArrastrando, yArrastrando;
+
+	public Dibujo() {
+		setLayout(new BorderLayout());
+        JPanel panelControl = new JPanel();
+		panelControl.setBackground(Color.LIGHT_GRAY);
+
+		JLabel label = new JLabel("Entra y arrastra el mouse:");
+		panelControl.add(label);
+		
+		tf = new JTextField(20);
+		panelControl.add(tf);
+
+		
+		String[] colores = {"Negro", "Rojo", "Azul"};
+		comboColores = new JComboBox<>(colores);
+		comboColores.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				String seleccion = (String) comboColores.getSelectedItem();
+				switch (seleccion) {
+					case "Rojo":
+						colorActual = Color.RED;
+						break;
+					case "Azul":
+						colorActual = Color.BLUE;
+						break;
+					default:
+						colorActual = Color.BLACK;
+						break;
+				}
+			}
+		});
+		panelControl.add(comboColores);
+
+		btnLimpiar = new JButton("Limpiar");
+		btnLimpiar.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				repaint();
+			}
+		});
+		panelControl.add(btnLimpiar);
+
+		add(panelControl, BorderLayout.NORTH);
+
+		setPreferredSize(new Dimension(800, 600));
+		setBackground(Color.WHITE);
+		addMouseListener(this);
+		addMouseMotionListener(this);
+	}
+
+	@Override
+	public void mouseDragged(MouseEvent ev) {
+		Graphics g = getGraphics();
+		g.setColor(colorActual); 
+		
+		xArrastrando = ev.getX();
+		yArrastrando = ev.getY();
+		
+		g.drawLine(xPresionado, yPresionado, xArrastrando, yArrastrando);
+		
+		xPresionado = xArrastrando;
+		yPresionado = yArrastrando;
+
+		String msg = "Posicion del Mouse Arrastrando x: " + xArrastrando + ", y: " + yArrastrando;
+		tf.setText(msg);
+	}
+
+	@Override
+	public void mousePressed(MouseEvent ev) {
+		xPresionado = ev.getX();
+		yPresionado = ev.getY();
+		String msg = "Posicion del Mouse Presionado en x: " + xPresionado + ", y: " + yPresionado;
+		System.out.println(msg);
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent ev) {
+		xLiberado = ev.getX();
+		yLiberado = ev.getY();
+		String msg = "Posicion del Mouse Liberado en x: " + xLiberado + ", y: " + yLiberado;
+		System.out.println(msg);
+	}
+
+	@Override
+	public void mouseMoved(MouseEvent ev) { }
+	@Override
+	public void mouseClicked(MouseEvent ev) { }
+	@Override
+	public void mouseEntered(MouseEvent ev) { }
+	@Override
+	public void mouseExited(MouseEvent ev) { }
+
+	private static void crearGUI() {
+		JFrame frame = new JFrame("Dibujo Libre");
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		JComponent contenidoPanel = new Dibujo();
+		contenidoPanel.setOpaque(true);
+		frame.setContentPane(contenidoPanel);
+		frame.pack();
+		frame.setLocationRelativeTo(null); 
+		frame.setVisible(true);
+	}
+
+	public static void main(String[] args) {
+		javax.swing.SwingUtilities.invokeLater(new Runnable() {
+			public void run() {
+				crearGUI();
+			}
+		});
+	}
+}
