@@ -1,0 +1,220 @@
+icole@nicole-VirtualBox:~$ ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host noprefixroute 
+       valid_lft forever preferred_lft forever
+2: enp0s3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 08:00:27:48:5a:a3 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.100.206/24 brd 192.168.100.255 scope global dynamic noprefixroute enp0s3
+       valid_lft 259130sec preferred_lft 259130sec
+    inet6 2806:2f0:aca1:f408:8975:3bcf:8b96:9b51/64 scope global temporary dynamic 
+       valid_lft 86329sec preferred_lft 85778sec
+    inet6 2806:2f0:aca1:f408:882:4b02:810c:40c4/64 scope global dynamic mngtmpaddr noprefixroute 
+       valid_lft 86329sec preferred_lft 85929sec
+    inet6 fe80::aefb:36ab:1c08:be76/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
+nicole@nicole-VirtualBox:~$ ip route
+default via 192.168.100.1 dev enp0s3 proto dhcp src 192.168.100.206 metric 100 
+192.168.100.0/24 dev enp0s3 proto kernel scope link src 192.168.100.206 metric 100 
+nicole@nicole-VirtualBox:~$ sudo apt update && sudo apt install openssh-server openssh-client nmap -y
+[sudo] contraseña para nicole:     
+Ign:1 http://packages.linuxmint.com zena InRelease
+Obj:2 http://packages.linuxmint.com zena Release                       
+Obj:3 http://security.ubuntu.com/ubuntu noble-security InRelease       
+Obj:4 http://archive.ubuntu.com/ubuntu noble InRelease
+Obj:6 http://archive.ubuntu.com/ubuntu noble-updates InRelease
+Obj:7 http://archive.ubuntu.com/ubuntu noble-backports InRelease
+Leyendo lista de paquetes... Hecho
+Creando árbol de dependencias... Hecho
+Leyendo la información de estado... Hecho
+Se pueden actualizar 333 paquetes. Ejecute «apt list --upgradable» para verlos.
+Leyendo lista de paquetes... Hecho
+Creando árbol de dependencias... Hecho
+Leyendo la información de estado... Hecho
+Se instalarán los siguientes paquetes adicionales:
+  liblinear4 libssh2-1t64 ncurses-term nmap-common openssh-sftp-server ssh-import-id
+Paquetes sugeridos:
+  liblinear-tools liblinear-dev ncat ndiff zenmap keychain libpam-ssh monkeysphere ssh-askpass molly-guard
+Se instalarán los siguientes paquetes NUEVOS:
+  liblinear4 libssh2-1t64 ncurses-term nmap nmap-common openssh-server openssh-sftp-server ssh-import-id
+Se actualizarán los siguientes paquetes:
+  openssh-client
+1 actualizados, 8 nuevos se instalarán, 0 para eliminar y 332 no actualizados.
+Se necesita descargar 7 787 kB de archivos.
+Se utilizarán 33.4 MB de espacio de disco adicional después de esta operación.
+Des:1 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 openssh-client amd64 1:9.6p1-3ubuntu13.16 [907 kB]
+Des:2 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 openssh-sftp-server amd64 1:9.6p1-3ubuntu13.16 [37.3 kB]
+Des:3 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 openssh-server amd64 1:9.6p1-3ubuntu13.16 [510 kB]
+Des:4 http://archive.ubuntu.com/ubuntu noble/universe amd64 liblinear4 amd64 2.3.0+dfsg-5build1 [42.3 kB]
+Des:5 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libssh2-1t64 amd64 1.11.0-4.1ubuntu0.24.04.1 [120 kB]
+Des:6 http://archive.ubuntu.com/ubuntu noble/main amd64 ncurses-term all 6.4+20240113-1ubuntu2 [275 kB]
+Des:7 http://archive.ubuntu.com/ubuntu noble/universe amd64 nmap-common all 7.94+git20230807.3be01efb1+dfsg-3build2 [4 192 kB]
+Des:8 http://archive.ubuntu.com/ubuntu noble/universe amd64 nmap amd64 7.94+git20230807.3be01efb1+dfsg-3build2 [1 694 kB]
+Des:9 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 ssh-import-id all 5.11-0ubuntu2.24.04.1 [10.1 kB]
+Descargados 7 787 kB en 1s (13.8 MB/s)
+Preconfigurando paquetes ...
+(Leyendo la base de datos ... 464623 ficheros o directorios instalados actualmente.)
+Preparando para desempaquetar .../0-openssh-client_1%3a9.6p1-3ubuntu13.16_amd64.deb ...
+Desempaquetando openssh-client (1:9.6p1-3ubuntu13.16) sobre (1:9.6p1-3ubuntu13.14) ...
+Seleccionando el paquete openssh-sftp-server previamente no seleccionado.
+Preparando para desempaquetar .../1-openssh-sftp-server_1%3a9.6p1-3ubuntu13.16_amd64.deb ...
+Desempaquetando openssh-sftp-server (1:9.6p1-3ubuntu13.16) ...
+Seleccionando el paquete openssh-server previamente no seleccionado.
+Preparando para desempaquetar .../2-openssh-server_1%3a9.6p1-3ubuntu13.16_amd64.deb ...
+Desempaquetando openssh-server (1:9.6p1-3ubuntu13.16) ...
+Seleccionando el paquete liblinear4:amd64 previamente no seleccionado.
+Preparando para desempaquetar .../3-liblinear4_2.3.0+dfsg-5build1_amd64.deb ...
+Desempaquetando liblinear4:amd64 (2.3.0+dfsg-5build1) ...
+Seleccionando el paquete libssh2-1t64:amd64 previamente no seleccionado.
+Preparando para desempaquetar .../4-libssh2-1t64_1.11.0-4.1ubuntu0.24.04.1_amd64.deb ...
+Desempaquetando libssh2-1t64:amd64 (1.11.0-4.1ubuntu0.24.04.1) ...
+Seleccionando el paquete ncurses-term previamente no seleccionado.
+Preparando para desempaquetar .../5-ncurses-term_6.4+20240113-1ubuntu2_all.deb ...
+Desempaquetando ncurses-term (6.4+20240113-1ubuntu2) ...
+Seleccionando el paquete nmap-common previamente no seleccionado.
+Preparando para desempaquetar .../6-nmap-common_7.94+git20230807.3be01efb1+dfsg-3build2_all.deb ...
+Desempaquetando nmap-common (7.94+git20230807.3be01efb1+dfsg-3build2) ...
+Seleccionando el paquete nmap previamente no seleccionado.
+Preparando para desempaquetar .../7-nmap_7.94+git20230807.3be01efb1+dfsg-3build2_amd64.deb ...
+Desempaquetando nmap (7.94+git20230807.3be01efb1+dfsg-3build2) ...
+Seleccionando el paquete ssh-import-id previamente no seleccionado.
+Preparando para desempaquetar .../8-ssh-import-id_5.11-0ubuntu2.24.04.1_all.deb ...
+Desempaquetando ssh-import-id (5.11-0ubuntu2.24.04.1) ...
+Configurando openssh-client (1:9.6p1-3ubuntu13.16) ...
+Configurando ssh-import-id (5.11-0ubuntu2.24.04.1) ...
+Configurando liblinear4:amd64 (2.3.0+dfsg-5build1) ...
+Configurando nmap-common (7.94+git20230807.3be01efb1+dfsg-3build2) ...
+Configurando libssh2-1t64:amd64 (1.11.0-4.1ubuntu0.24.04.1) ...
+Configurando ncurses-term (6.4+20240113-1ubuntu2) ...
+Configurando openssh-sftp-server (1:9.6p1-3ubuntu13.16) ...
+Configurando openssh-server (1:9.6p1-3ubuntu13.16) ...
+
+Creating config file /etc/ssh/sshd_config with new version
+Creating SSH2 RSA key; this may take some time ...
+3072 SHA256:ySNdHDNebm1HlTXqBehVHp6KDF+h0jSkSZZEpTzsK/w root@nicole-VirtualBox (RSA)
+Creating SSH2 ECDSA key; this may take some time ...
+256 SHA256:+6lN1cfKGAArip+hQe8sxyHB44Fwwv0ZjgCnd5wvw+k root@nicole-VirtualBox (ECDSA)
+Creating SSH2 ED25519 key; this may take some time ...
+256 SHA256:oC3eQc7ZlbY3aAaBejBpAQy/MEy6fydweoL/Jz7CqgU root@nicole-VirtualBox (ED25519)
+Created symlink /etc/systemd/system/sockets.target.wants/ssh.socket → /usr/lib/systemd/system/ssh.socket.
+Created symlink /etc/systemd/system/ssh.service.requires/ssh.socket → /usr/lib/systemd/system/ssh.socket.
+Configurando nmap (7.94+git20230807.3be01efb1+dfsg-3build2) ...
+Procesando disparadores para ufw (0.36.2-6) ...
+Procesando disparadores para man-db (2.12.0-4build2) ...
+Procesando disparadores para libc-bin (2.39-0ubuntu8.6) ...
+nicole@nicole-VirtualBox:~$ sudo systemctl enable ssh
+Synchronizing state of ssh.service with SysV service script with /usr/lib/systemd/systemd-sysv-install.
+Executing: /usr/lib/systemd/systemd-sysv-install enable ssh
+Created symlink /etc/systemd/system/sshd.service → /usr/lib/systemd/system/ssh.service.
+Created symlink /etc/systemd/system/multi-user.target.wants/ssh.service → /usr/lib/systemd/system/ssh.service.
+nicole@nicole-VirtualBox:~$ sudo systemctl start shh
+Failed to start shh.service: Unit shh.service not found.
+nicole@nicole-VirtualBox:~$ sudo systemctl start ssh
+nicole@nicole-VirtualBox:~$ sudo systemctl status ssh
+● ssh.service - OpenBSD Secure Shell server
+     Loaded: loaded (/usr/lib/systemd/system/ssh.service; enabled; preset: enabled)
+     Active: active (running) since Fri 2026-05-29 11:49:58 CST; 11s ago
+TriggeredBy: ● ssh.socket
+       Docs: man:sshd(8)
+             man:sshd_config(5)
+    Process: 3472 ExecStartPre=/usr/sbin/sshd -t (code=exited, status=0/SUCCESS)
+   Main PID: 3474 (sshd)
+      Tasks: 1 (limit: 2256)
+     Memory: 1.2M (peak: 1.5M)
+        CPU: 16ms
+     CGroup: /system.slice/ssh.service
+             └─3474 "sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups"
+
+may 29 11:49:58 nicole-VirtualBox systemd[1]: Starting ssh.service - OpenBSD Secure Shell server...
+may 29 11:49:58 nicole-VirtualBox sshd[3474]: Server listening on 0.0.0.0 port 22.
+may 29 11:49:58 nicole-VirtualBox sshd[3474]: Server listening on :: port 22.
+may 29 11:49:58 nicole-VirtualBox systemd[1]: Started ssh.service - OpenBSD Secure Shell server.
+nicole@nicole-VirtualBox:~$ ss -tlnp | grep :22
+LISTEN 0      4096                                    0.0.0.0:22        0.0.0.0:*          
+LISTEN 0      4096                                       [::]:22           [::]:*          
+nicole@nicole-VirtualBox:~$ sudo useradd -m -s /bin/bash -c "Usuario objetivo" alumno01
+nicole@nicole-VirtualBox:~$ sudo passwd alumno01
+Nueva contraseña: 
+Vuelva a escribir la nueva contraseña: 
+Las contraseñas no coinciden.
+passwd: Error de manipulación del testigo de autenticación
+passwd: no se ha cambiado la contraseña
+nicole@nicole-VirtualBox:~$ sudo passwd alumno01
+Nueva contraseña: 
+Vuelva a escribir la nueva contraseña: 
+No se ha proporcionado ninguna contraseña.
+Nueva contraseña: 
+Vuelva a escribir la nueva contraseña: 
+passwd: contraseña actualizada correctamente
+nicole@nicole-VirtualBox:~$ sudo usermod -aG sudo alumno01
+nicole@nicole-VirtualBox:~$ sudo - alumno01
+sudo: -: orden no encontrada
+nicole@nicole-VirtualBox:~$ su -alumno01
+su: opción incorrecta -- «a»
+Escriba 'su --help' para obtener más información.
+nicole@nicole-VirtualBox:~$ su - alumno01
+Contraseña: 
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+alumno01@nicole-VirtualBox:~$ nano /home/alumno01/secreto.txt
+alumno01@nicole-VirtualBox:~$ mkdir -p/home/alumno01/.config/sistema
+mkdir: opción incorrecta -- «/»
+Pruebe 'mkdir --help' para más información.
+alumno01@nicole-VirtualBox:~$ nano /home/alumno01/secreto.txt
+alumno01@nicole-VirtualBox:~$ mkdir -p /home/alumno01/.config/sistema
+alumno01@nicole-VirtualBox:~$ mv /home/alumno01/secreto.txt /home/alumno01/.config/sistema/secreto.txt
+alumno01@nicole-VirtualBox:~$ ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host noprefixroute 
+       valid_lft forever preferred_lft forever
+2: enp0s3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 08:00:27:48:5a:a3 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.100.206/24 brd 192.168.100.255 scope global dynamic noprefixroute enp0s3
+       valid_lft 257698sec preferred_lft 257698sec
+    inet6 2806:2f0:aca1:f408:8975:3bcf:8b96:9b51/64 scope global temporary dynamic 
+       valid_lft 86368sec preferred_lft 84346sec
+    inet6 2806:2f0:aca1:f408:882:4b02:810c:40c4/64 scope global dynamic mngtmpaddr noprefixroute 
+       valid_lft 86368sec preferred_lft 85968sec
+    inet6 fe80::aefb:36ab:1c08:be76/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
+alumno01@nicole-VirtualBox:~$ ip route | grep default
+default via 192.168.100.1 dev enp0s3 proto dhcp src 192.168.100.206 metric 100 
+alumno01@nicole-VirtualBox:~$ exit
+cerrar sesión
+nicole@nicole-VirtualBox:~$ nmap -sn 192.168.100.0/24
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2026-05-29 12:06 CST
+Nmap scan report for _gateway (192.168.100.1)
+Host is up (0.018s latency).
+Nmap scan report for 192.168.100.112
+Host is up (0.063s latency).
+Nmap scan report for 192.168.100.121
+Host is up (0.0058s latency).
+Nmap scan report for 192.168.100.166
+Host is up (0.051s latency).
+Nmap scan report for nicole-VirtualBox (192.168.100.206)
+Host is up (0.0069s latency).
+Nmap done: 256 IP addresses (5 hosts up) scanned in 3.73 seconds
+nicole@nicole-VirtualBox:~$ nmap -p 22 192.168.100.112
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2026-05-29 12:08 CST
+Nmap scan report for 192.168.100.112
+Host is up (0.11s latency).
+
+PORT   STATE  SERVICE
+22/tcp closed ssh
+
+Nmap done: 1 IP address (1 host up) scanned in 0.20 seconds
+nicole@nicole-VirtualBox:~$ ssh alumno01@192.168.100.112
+ssh: connect to host 192.168.100.112 port 22: Connection refused
+nicole@nicole-VirtualBox:~$ sudo cp /home/alumno01/.config/sistema/secreto.txt /home/nicole/robado.txr
+nicole@nicole-VirtualBox:~$ sudo chown nicole:nicole /home/nicole/robado.txt
+nicole@nicole-VirtualBox:~$ cat /home/nicole/robado.txt
+Este archivo peretence a Nicole.
+Si estas leyendo esto, lograste entrar.
+Fecha: 29 de mayo de 2026
+nicole@nicole-VirtualBox:~$ sudo shutdown -h now
