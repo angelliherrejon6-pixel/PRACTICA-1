@@ -1,0 +1,331 @@
+nicole@nicole-VirtualBox:~$ sudo cp/homr/alumno01/.config/sistema/secreto.txt /home/nicole/robado.txt
+[sudo] contraseña para nicole:     
+sudo: cp/homr/alumno01/.config/sistema/secreto.txt: orden no encontrada
+nicole@nicole-VirtualBox:~$ sudo chown nicole:nicole /home/nicole/robado.txt
+nicole@nicole-VirtualBox:~$ cat /home/nicole/robado.txt
+Este archivo peretence a Nicole.
+Si estas leyendo esto, lograste entrar.
+Fecha: 29 de mayo de 2026
+nicole@nicole-VirtualBox:~$ sudo shutdown -h now
+nicole@nicole-VirtualBox:~$ sudo cp /home/alumno01/.config/sistema/secreto.txt /home/nicole/robado.txr
+nicole@nicole-VirtualBox:~$ sudo chown nicole:nicole /home/nicole/robado.txt
+nicole@nicole-VirtualBox:~$ cat /home/nicole/robado.txt
+Este archivo peretence a Nicole.
+Si estas leyendo esto, lograste entrar.
+Fecha: 29 de mayo de 2026
+nicole@nicole-VirtualBox:~$ sudo shutdown -h now
+nicole@nicole-VirtualBox:~$ vmstat 1 5
+procs -----------memory---------- ---swap-- -----io---- -system-- -------cpu-------
+ r  b   swpd  libre   búf caché   si   so    bi    bo   in   cs us sy id wa st gu
+ 0  0 1015084 346368  95728 536900   15   59   197   124  477    5  1  4 94  0  0  0
+ 0  0 1015080 346368  95728 536916    0    0     0     0 2525 1098  1  0 99  0  0  0
+ 0  0 1015080 346368  95728 536916    0    0     0     0 2701 2063  0  1 99  0  0  0
+ 0  0 1015080 346368  95728 536916    0    0     0     0 2538  730  1  0 99  0  0  0
+ 0  0 1015080 346368  95736 536900    0    0     0    28 1961  482  0  1 98  1  0  0
+nicole@nicole-VirtualBox:~$ strees --cpu 2 --timeout 120 & echo "PID de stress: $!"
+[1] 9191
+PID de stress: 9191
+nicole@nicole-VirtualBox:~$ Orden «strees» no encontrada. Quizá quiso decir:
+  la orden «stress» del paquete deb «stress (1.0.7-1)»
+Pruebe con: sudo apt install <nombre del paquete deb>
+^C
+[1]+  Salida 127              strees --cpu 2 --timeout 120
+nicole@nicole-VirtualBox:~$ top
+
+top - 14:57:29 up  4:55,  1 user,  load average: 0.04, 3.21, 14.84
+Tareas: 212 total,   1 ejecutar,  211 hibernar,    0 detener,    0 zombie
+%Cpu0  :  0.8 us,  0.4 sy,  0.0 ni, 98.4 id,  0.0 wa,  0.0 hi,  0.4 si,  0.0 st 
+MiB Mem :   1968.7 total,    337.8 libre,   1204.6 usado,    630.9 búf/caché     
+MiB Intercambio:   2680.0 total,   1689.9 libre,    990.1 usado.    764.1 dispon Mem 
+
+    PID USUARIO   PR  NI    VIRT    RES    SHR S  %CPU  %MEM     HORA+ ORDEN                                                                                  
+   1403 nicole    20   0 3368548 155296  90380 S   4.0   7.7   3:12.20 cinnamon                                                                               
+    983 root      20   0  434684  83268  51696 S   1.3   4.1   0:33.47 Xorg                                                                                   
+   2271 nicole    20   0 4214648 422760  69928 S   1.0  21.0   6:06.65 Isolated Web Co                                                                        
+   1699 nicole    20   0  696132  35072  30476 S   0.3   1.7   0:03.70 gnome-terminal-                                                                        
+      1 root      20   0   22960  13232   9428 S   0.0   0.7   0:07.48 systemd                                                                                
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.84 kthreadd                                                                               
+      3 root      20   0       0      0      0 S   0.0   0.0   0:00.00 pool_workqueue_release                                                                 
+      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-rcu_gp                                                                       
+      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-sync_wq                                                                      
+      6 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-kvfree_rcu_reclaim                                                           
+      7 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-slub_flushwq                                                                 
+      8 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-netns                                                                        
+     13 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-mm_percpu_wq                                                                 
+     14 root      20   0       0      0      0 I   0.0   0.0   0:00.00 rcu_tasks_kthread                                                                      
+     15 root      20   0       0      0      0 I   0.0   0.0   0:00.00 rcu_tasks_rude_kthread                                                                 
+     16 root      20   0       0      0      0 I   0.0   0.0   0:00.00 rcu_tasks_trace_kthread                                                                
+     17 root      20   0       0      0      0 S   0.0   0.0   0:06.36 ksoftirqd/0                                                                            
+     18 root      20   0       0      0      0 I   0.0   0.0   0:02.43 rcu_preempt                                                                            
+     19 root      20   0       0      0      0 S   0.0   0.0   0:00.00 rcu_exp_par_gp_kthread_worker/0                                                        
+     20 root      20   0       0      0      0 S   0.0   0.0   0:00.00 rcu_exp_gp_kthread_worker                                                              
+     21 root      rt   0       0      0      0 S   0.0   0.0   0:00.19 migration/0                                                                            
+     22 root     -51   0       0      0      0 S   0.0   0.0   0:00.00 idle_inject/0                                                                          
+     23 root      20   0       0      0      0 S   0.0   0.0   0:00.00 cpuhp/0                                                                                
+     24 root      20   0       0      0      0 S   0.0   0.0   0:00.00 kdevtmpfs                                                                              
+     25 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-inet_frag_wq                                                                 
+     26 root      20   0       0      0      0 S   0.0   0.0   0:00.02 kauditd                                                                                
+     27 root      20   0       0      0      0 S   0.0   0.0   0:00.05 khungtaskd                                                                             
+     29 root      20   0       0      0      0 S   0.0   0.0   0:00.00 oom_reaper                                                                             
+     31 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-writeback                                                                    
+     32 root      20   0       0      0      0 S   0.0   0.0   0:03.36 kcompactd0                                                                             
+     33 root      25   5       0      0      0 S   0.0   0.0   0:00.00 ksmd                                                                                   
+     34 root      39  19       0      0      0 S   0.0   0.0   0:00.00 khugepaged                                                                             
+     35 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-kintegrityd                                                                  
+     36 root       0 -20       0      0      0 I   0.0   0.0   0:00.11 kworker/R-kblockd                                                                      
+     37 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-blkcg_punt_bio                                                               
+nicole@nicole-VirtualBox:~$ stress --cpu 2 --timeout 60 &
+[1] 9281
+nicole@nicole-VirtualBox:~$ stress: info: [9281] dispatching hogs: 2 cpu, 0 io, 0 vm, 0 hdd
+vmstat 2 10
+procs -----------memory---------- ---swap-- -----io---- -system-- -------cpu-------
+ r  b   swpd  libre   búf caché   si   so    bi    bo   in   cs us sy id wa st gu
+ 5  0 1013712 345868  96204 549952   15   58   194   121  502    5  1  4 95  0  0  0
+ 2  0 1013712 345868  96204 549952    0    0     0     4  106  455 100  0  0  0  0  0
+ 2  1 1013712 345868  96204 549952    0    0     0     0  104  385 90 10  0  0  0  0
+ 3  0 1013704 345868  96204 549956   24    0    24   152  111  456 91  9  0  0  0  0
+ 2  0 1013704 345868  96212 549956    0    0     0    38  115  473 91  9  0  0  0  0
+ 2  0 1013704 345868  96212 549956    0    0     0     0  105  347 95  5  0  0  0  0
+ 2  0 1013704 345868  96212 549956    0    0     0     0  105  405 95  5  0  0  0  0
+ 2  0 1013704 345868  96212 549956    0    0     0     0  110  398 91  9  0  0  0  0
+ 2  0 1013704 345868  96212 549956    0    0     0     0  105  453 91  9  0  0  0  0
+ 2  0 1013704 345868  96212 549956    0    0     0     0  105  386 100  0  0  0  0  0
+nicole@nicole-VirtualBox:~$ stress: info: [9281] successful run completed in 60s
+^C
+[1]+  Hecho                   stress --cpu 2 --timeout 60
+nicole@nicole-VirtualBox:~$ stress --vm 1 --vm-bytes 256M --timeout 60 & vmstat 2 5 && free -h
+[1] 9331
+stress: info: [9331] dispatching hogs: 0 cpu, 0 io, 1 vm, 0 hdd
+procs -----------memory---------- ---swap-- -----io---- -system-- -------cpu-------
+ r  b   swpd  libre   búf caché   si   so    bi    bo   in   cs us sy id wa st gu
+ 0  0 943104 336040  96296 553208   18   58   196   121  511    5  1  4 95  0  0  0
+ 1  0 943104 251380  96304 553208    0    0     0     8  130  530  4 96  0  0  0  0
+ 1  0 943104 123372  96304 553208    0    0     0     0  123  485  4 96  0  0  0  0
+ 1  0 943100  99292  96304 553208    0    0     0     0  107  395 14 86  0  0  0  0
+ 1  0 943100 130112  96304 553208    0    0     0     0  105  428 10 90  0  0  0  0
+               total       usado       libre  compartido   búf/caché  disponible
+Mem:           1.9Gi       1.4Gi       127Mi        30Mi       634Mi       560Mi
+Inter:         2.6Gi       920Mi       1.7Gi
+nicole@nicole-VirtualBox:~$ stress: info: [9331] successful run completed in 60s
+^C
+[1]+  Hecho                   stress --vm 1 --vm-bytes 256M --timeout 60
+nicole@nicole-VirtualBox:~$ stress --cou 2 --timeout 60 &
+[1] 9384
+nicole@nicole-VirtualBox:~$ stress: FAIL: [9384] (251) unrecognized option: --cou
+stress --vm 1 --vm-bytes 256M --timeout 60 & vmstat 2 5 && free -h^C
+[1]+  Salida 1                stress --cou 2 --timeout 60
+nicole@nicole-VirtualBox:~$ stress --cpu 2 --timeout 60 &
+[1] 9405
+nicole@nicole-VirtualBox:~$ stress: info: [9405] dispatching hogs: 2 cpu, 0 io, 0 vm, 0 hdd
+^C
+nicole@nicole-VirtualBox:~$ ps aux | grep stress
+nicole      9405  0.0  0.1   3620  2208 pts/0    S    15:04   0:00 stress --cpu 2 --timeout 60
+nicole      9406 46.4  0.0   3620   568 pts/0    R    15:04   0:09 stress --cpu 2 --timeout 60
+nicole      9407 46.4  0.0   3620   568 pts/0    R    15:04   0:09 stress --cpu 2 --timeout 60
+nicole      9413  0.0  0.1  11780  2384 pts/0    S+   15:04   0:00 grep --color=auto stress
+nicole@nicole-VirtualBox:~$ ps -p 9191 -o pid,ppid,cmdstress: info: [9405] successful run completed in 60s
+^C
+[1]+  Hecho                   stress --cpu 2 --timeout 60
+nicole@nicole-VirtualBox:~$ ps -p 9191 -o pid,ppid,cmd,%cpu,%mem,stat,ni
+    PID    PPID CMD                         %CPU %MEM STAT  NI
+nicole@nicole-VirtualBox:~$ echo "=== MÉTRICAS BAJO CARGA - $(date) ===" && vmstat 1 5 free -h && wait
+=== MÉTRICAS BAJO CARGA - sáb 30 may 2026 15:08:34 CST ===
+
+Uso:
+ vmstat [opciones] [retraso [contador]]
+
+Opciones:
+ -a, --active           memoria activa/inactiva
+ -f, --forks            número de bifurcaciones desde el arranque
+ -m, --slabs            información de slab
+ -n, --one-header       no volver a mostrar la cabecera
+ -s, --stats            estadísticas del contador de eventos
+ -d, --disk             estadísticas de disco
+ -D, --disk-sum         resumen de estadísticas de discos
+ -p, --partition <dispositivo>  estadísticas específicas de partición
+ -S, --unit <carácter>      definir unidad de visualización
+ -w, --wide             salida ancha
+ -t, --timestamp        mostrar marca de tiempo
+ -y, --no-first         salta la primera línea de salida
+
+ -h, --help     muestra esta ayuda y sale
+ -V, --version  muestra información de versión y sale
+
+Para más detalles consulte vmstat(8).
+nicole@nicole-VirtualBox:~$ 
+nicole@nicole-VirtualBox:~$ nice -n 15 stress --cpu 2 --timeout 120 &
+[1] 9552
+nicole@nicole-VirtualBox:~$ stress: info: [9552] dispatching hogs: 2 cpu, 0 io, 0 vm, 0 hdd
+
+nicole@nicole-VirtualBox:~$ ^[[200~nice -n 15 stress --cpu 2 --timeout 120 &
+[2] 9576
+nicole@nicole-VirtualBox:~$ STRESS_PID=$!
+nicole@nicole-VirtualBox:~$ ps -p $STRESS_PID -o pid,ni,cmd,%cpu~nice: no se encontró la orden
+nicole@nicole-VirtualBox:~$ nice -n 15 stress --cpu 2 --timeout 120 &
+STRESS_PID=$!
+ps -p $STRESS_PID -o pid,ni,cmd,%cpu
+[3] 9600
+[2]   Salida 127              nice -n 15 stress --cpu 2 --timeout 120
+    PID  NI CMD                         %CPU
+   9600  15 stress --cpu 2 --timeout 12  0.0
+nicole@nicole-VirtualBox:~$ stress: info: [9600] dispatching hogs: 2 cpu, 0 io, 0 vm, 0 hdd
+stress: info: [9552] successful run completed in 120s
+^C
+[1]-  Hecho                   nice -n 15 stress --cpu 2 --timeout 120
+nicole@nicole-VirtualBox:~$ stress: info: [9600] successful run completed in 120s
+^C
+[3]+  Hecho                   nice -n 15 stress --cpu 2 --timeout 120
+nicole@nicole-VirtualBox:~$ stress --cpu 1 --timeout 60 &
+PID_NORMAL=$!
+
+nice -n 15 stress --cpu 1 --timeout 60 &
+PID_BAJO=$!
+[1] 9649
+[2] 9650
+nicole@nicole-VirtualBox:~$ stress: info: [9649] dispatching hogs: 1 cpu, 0 io, 0 vm, 0 hdd
+stress: info: [9650] dispatching hogs: 1 cpu, 0 io, 0 vm, 0 hdd
+^C
+nicole@nicole-VirtualBox:~$ top
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+top - 15:16:45 up  5:14,  1 user,  load average: 2.10, 1.62, 5.14
+Tareas: 211 total,   3 ejecutar,  208 hibernar,    0 detener,    0 zombie
+%Cpu(s): 90.6 us,  0.0 sy,  6.2 ni,  0.0 id,  0.0 wa,  0.0 hi,  3.1 si,  0.0 st 
+top - 15:17:09 up  5:15,  1 user,  load average: 1.44, 1.50, 5.01
+Tareas: 207 total,   1 ejecutar,  206 hibernar,    0 detener,    0 zombie
+%Cpu(s):  0.4 us,  0.0 sy,  0.0 ni, 99.6 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st 
+    PID USUARIO   PR  NI    VIRT    RES    SHR S  %CPU  %MEM     HORA+ ORDEN                                                                                  
+MiB Intercambio:   2680.0 total,   1779.3 libre,    900.7 usado.    683.8 dispon Mem 
+
+   1403 nicole    20   0 3356452 157444  91704 S   1.0   7.8   3:49.51 cinnamon                                                                               
+   1403 nicole    20   0 3356452 157448  91704 S   3.0   7.8   3:50.13 cinnamon                                                                               
+   2271 nicole    20   0 4218776 469308  78868 S   0.7  23.3   6:26.85 Isolated Web Co                                                                        
+    983 root      20   0  421036  87048  48880 S   0.3   4.3   0:44.13 Xorg                                                                                   
+   2050 nicole    20   0   12.3g 313824 119500 S   0.3  15.6   3:12.48 firefox-bin                                                                            
+   2139 nicole    20   0 3565988  95952  62452 S   0.3   4.8   2:11.03 Privileged Cont                                                                        
+      1 root      20   0   22960  13232   9428 S   0.0   0.7   0:07.60 systemd                                                                                
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.85 kthreadd                                                                               
+      3 root      20   0       0      0      0 S   0.0   0.0   0:00.00 pool_workqueue_release                                                                 
+      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-rcu_gp                                                                       
+      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-sync_wq                                                                      
+      6 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-kvfree_rcu_reclaim                                                           
+      7 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-slub_flushwq                                                                 
+      8 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-netns                                                                        
+     13 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-mm_percpu_wq                                                                 
+     14 root      20   0       0      0      0 I   0.0   0.0   0:00.00 rcu_tasks_kthread                                                                      
+     15 root      20   0       0      0      0 I   0.0   0.0   0:00.00 rcu_tasks_rude_kthread                                                                 
+     16 root      20   0       0      0      0 I   0.0   0.0   0:00.00 rcu_tasks_trace_kthread                                                                
+     17 root      20   0       0      0      0 S   0.0   0.0   0:06.48 ksoftirqd/0                                                                            
+     18 root      20   0       0      0      0 I   0.0   0.0   0:02.54 rcu_preempt                                                                            
+     19 root      20   0       0      0      0 S   0.0   0.0   0:00.00 rcu_exp_par_gp_kthread_worker/0                                                        
+     20 root      20   0       0      0      0 S   0.0   0.0   0:00.00 rcu_exp_gp_kthread_worker                                                              
+     21 root      rt   0       0      0      0 S   0.0   0.0   0:00.20 migration/0                                                                            
+     22 root     -51   0       0      0      0 S   0.0   0.0   0:00.00 idle_inject/0                                                                          
+     23 root      20   0       0      0      0 S   0.0   0.0   0:00.00 cpuhp/0                                                                                
+     24 root      20   0       0      0      0 S   0.0   0.0   0:00.00 kdevtmpfs                                                                              
+     25 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-inet_frag_wq                                                                 
+     26 root      20   0       0      0      0 S   0.0   0.0   0:00.02 kauditd                                                                                
+     27 root      20   0       0      0      0 S   0.0   0.0   0:00.05 khungtaskd                                                                             
+     29 root      20   0       0      0      0 S   0.0   0.0   0:00.00 oom_reaper                                                                             
+     31 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-writeback                                                                    
+     32 root      20   0       0      0      0 S   0.0   0.0   0:03.42 kcompactd0                                                                             
+     33 root      25   5       0      0      0 S   0.0   0.0   0:00.00 ksmd                                                                                   
+     34 root      39  19       0      0      0 S   0.0   0.0   0:00.00 khugepaged                                                                             
+     35 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-kintegrityd                                                                  
+     36 root       0 -20       0      0      0 I   0.0   0.0   0:00.11 kworker/R-kblockd                                                                      
+[1]-  Hecho                   stress --cpu 1 --timeout 60
+[2]+  Hecho                   nice -n 15 stress --cpu 1 --timeout 60
+nicole@nicole-VirtualBox:~$ stress --cpu 2 --timeout 120 &
+STRESS_PID=$!
+ps -p $STRESS_PID -o pid,ni
+renice +10 -p $STRESS_PID
+ps -p $STRESS_PID -o pid,ni
+[1] 9715
+stress: info: [9715] dispatching hogs: 2 cpu, 0 io, 0 vm, 0 hdd
+    PID  NI
+   9715   0
+9715 (process ID) prioridad anterior 0, nueva prioridad 10
+    PID  NI
+   9715  10
+nicole@nicole-VirtualBox:~$ stress: info: [9715] successful run completed in 120s
+^C
+[1]+  Hecho                   stress --cpu 2 --timeout 120
+nicole@nicole-VirtualBox:~$ stress --cpu 1 --timeout 300 &
+TEST_PID=$!
+ps -p $TEST_PID -o pid,stat
+kill -SIGSTOP $TEST_PID
+ps -p $TEST_PID -o pid,stat
+kill -SIGCONT $TEST_PID
+ps -p $TEST_PID -o pid,stat
+kill -SIGTERM $TEST_PID
+wait
+[1] 9787
+stress: info: [9787] dispatching hogs: 1 cpu, 0 io, 0 vm, 0 hdd
+    PID STAT
+   9787 S
+    PID STAT
+   9787 T
+
+[1]+  Detenido                stress --cpu 1 --timeout 300
+    PID STAT
+   9787 S
+[1]+  Terminado               stress --cpu 1 --timeout 300
+nicole@nicole-VirtualBox:~$ stress --cpu 1 --timeout 300 &
+PID1=$!
+kill -SIGTERM $PID1
+sleep 1
+ps -p $PID1 2>/dev/null || echo "[OK] terminado con SIGTERM"
+
+stress --cpu 1 --timeout 300 &
+PID2=$!
+kill -SIGKILL $PID2
+sleep 1
+ps -p $PID2 2>/dev/null || echo "[OK] eliminado con SIGKILL"
+[1] 9850
+[1]+  Terminado               stress --cpu 1 --timeout 300
+    PID TTY          TIME CMD
+[OK] terminado con SIGTERM
+[1] 9853
+[1]+  Terminado (killed)      stress --cpu 1 --timeout 300
+    PID TTY          TIME CMD
+[OK] eliminado con SIGKILL
+nicole@nicole-VirtualBox:~$ ulimit -v 524288
+ulimit -v
+
+stress --vm 1 --vm-bytes 200M --timeout 15 &
+wait
+echo "200M: completado sin problemas"
+
+stress --vm 1 --vm-bytes 600M --timeout 15 &
+wait
+echo "600M: intentado"
+524288
+[1] 9893
+stress: info: [9893] dispatching hogs: 0 cpu, 0 io, 1 vm, 0 hdd
+stress: info: [9893] successful run completed in 15s
+[1]+  Hecho                   stress --vm 1 --vm-bytes 200M --timeout 15
+200M: completado sin problemas
+[1] 9897
+stress: info: [9897] dispatching hogs: 0 cpu, 0 io, 1 vm, 0 hdd
+stress: FAIL: [9898] (512) hogvm malloc failed: Cannot allocate memory
+stress: FAIL: [9897] (404) <-- worker 9898 returned error 1
+stress: WARN: [9897] (406) now reaping child worker processes
+stress: FAIL: [9897] (461) failed run completed in 0s
+[1]+  Salida 1                stress --vm 1 --vm-bytes 600M --timeout 15
+600M: intentado
+nicole@nicole-VirtualBox:~$
